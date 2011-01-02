@@ -1,0 +1,20 @@
+<html>
+<head>
+	{% block scripts %}{% endblock %}
+	{% block css %}
+	<link rel="stylesheet" media="screen" href="{{ MEDIA_URL }}css/base.css" type="text/css">
+	{% endblock %}
+</head>
+<body>
+	<div id="header">
+		<div id="title"><a href="/">The Pushup Experiment</a></div>
+		<div id="huh"><a href="{% url views.huh %}">Huh, what gives?</a></div>
+	</div>
+	<div id="content">{% block content %}
+		Say hi:
+		<a href="mailto:chris@codesideup.com">chris@codesideup.com</a>
+		
+	{% endblock %}</div>
+</body>
+
+</html>

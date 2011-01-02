@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div id="today">{{ today }}
+	{% for workout,number in today_workouts.items %}
+		<h3 class="today">Today {{user.username|title }} needs to do {{ number }} {{ workout }}</h3>
+	{% endfor %}
+	</div>
+	<div id="counts">
+
+	{% for counts_on_date in counts %}
+		<div class="date">{{ counts_on_date.0.date }}
+		{% for count in counts_on_date %}
+			<div class="workout">
+				<h3 class="title">{{ count.workout.name }}</h3>
+				<h3 class="number">{{ count.number }}</h3>
+				{% if count.note %}
+				<div class="note">
+					{{ count.note }}
+				</div>
+				{% endif %}
+				
+				{% if user.is_authenticated and user == page_user %}
+					<a href="#">edit</a>
+				{% endif %}
+			</div>
+		{% endfor %}
+		</div>
+	{% endfor %}
+	</div>
+{% endblock %}
