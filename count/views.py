@@ -40,7 +40,7 @@ def user_counts(request,username):
 	
 	for workout in workouts:
 		ret['today_workouts'][workout.name] = \
-			days_ago(workout.start_date) + workout.start_number
+			days_ago(workout.start_date) + workout.start_number + 1
 		
 	return render_to_response('counts.html',
 		ret,
