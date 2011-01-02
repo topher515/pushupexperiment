@@ -4,7 +4,7 @@ DIRNAME = os.path.dirname(os.path.abspath(__file__))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-DEVELOPMENT = True
+DEVELOPMENT = os.path.isfile('development.flag')
 
 ADMINS = (
     ('Chris Wilcox', 'ckwilcox@gmail.com'),
