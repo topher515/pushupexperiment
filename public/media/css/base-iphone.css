@@ -1,0 +1,116 @@
+body {
+    background-color: #ddd; /* Background color */
+    color: #222;            /* Foreground color used for text */
+    font-family: Helvetica; 
+    font-size: 14px;
+    margin: 0;              /* Amount of negative space around the outside of the body */
+    padding: 0;             /* Amount of negative space around the inside of the body */
+}
+
+#header {
+	min-height: 30px;
+	background-color: #225;
+	color: #eee;
+	margin: 0px;
+	font-size: .7em;
+}
+#header #title {
+	float: left;
+	padding: 5px;
+	font-size: 1.2em;
+}
+
+
+#header a {
+	color:white;
+}
+
+
+#header #huh {
+	float: right;
+	padding: 10px;
+}
+
+
+form {
+	display:none;
+}
+
+#content h1 {
+    margin: 0px;
+    padding: 0px;
+}
+
+#content h2 {
+	margin: 0px;
+	padding: 0px;
+}
+
+#content h3 { 
+	margin: 0px;
+	padding: 0px;
+	font-size: .5em;
+}
+
+#content ul {
+    list-style: none;
+    padding: 0px;
+	list-style-type:none;
+	min-height: 30px;
+}
+
+.note {
+	clear: right;
+	text-align: right;
+	margin: 0px 25px 0px 0px;
+	font-style:italic;
+}
+
+.note:before {
+	content: "•";
+}
+
+
+#content ul > li {
+    background-color: #FFFFFF;
+    border: 1px solid #999999;
+    color: #222222;
+    display: block;
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: -1px;
+    padding: 4px 2px;
+    text-decoration: none;
+}
+
+
+#content ul li ul li {
+	background-image:url('../images/check-sm.png');
+	background-repeat:no-repeat;
+	background-position: right center;
+	border: none;
+}
+
+
+#content ul li ul li.bad {
+	background-color:#FEE;
+	background-image:url('../images/x-sm.png');
+	background-repeat:no-repeat;
+	background-position: right center;
+}
+
+
+#content h1 a {
+    text-shadow: 0px 1px 0px #fff;
+    background-image: -webkit-gradient(linear, left top, left bottom, 
+                                       from(#ccc), to(#999));
+}
+
+#content ul > li:first-child a {
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+}
+#content ul > li:last-child a {
+    -webkit-border-bottom-left-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+}

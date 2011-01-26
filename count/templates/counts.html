@@ -1,11 +1,43 @@
 {% extends 'base.html' %}
 {% block content %}
-	<div id="today">{{ today }}
-	{% for workout,number in today_workouts.items %}
-		<h3 class="today">Today {{user.username|title }} needs to do {{ number }} {{ workout }}</h3>
-	{% endfor %}
-	</div>
 	<div id="counts">
+		<ul>
+			<li class="date first">
+				<h3>Today</h3>
+				<ul>
+			{% for w in workouts %}
+					<li class="count"><span class="note">Today {{user.username|title }} needs to do {{ w.for_today }} {{ w.name }}</span></li>
+			{% endfor %}
+				</ul>
+			</li>
+		{% for counts_on_date in counts %}
+			<li class="date">
+				<h3>{{ counts_on_date.0.date }}</h3>
+				{% if not counts_on_date.0.skip %}
+				<ul>
+				{% for count in counts_on_date %}
+					<li class="count{% if not count.completed %} bad{% endif %}">{{ count.number }} {{ count.workout.name }}
+						{% if count.note %}<span class="note">{{ count.note }}</span>{% endif %}
+						
+						{% if user.is_authenticated and user == page_user %}
+							<form method="post" action="{% url count.views.add %}">
+								{% csrf_token %}
+								<input type="hidden" name="number" value="{{ count.number }}" />
+								<input type="hidden" name="workout" value="{{ count.workout.name }}" />
+								<input type="hidden" name="date" value="{{ date.year }}{{ date.month }}{{ date.day }}" />
+								<input type="submit" value="Add" />
+							</form>
+						{% endif %}
+					</li>
+				{% endfor %}
+				</ul>
+				{% else %}
+				<div class="skip">?</div>
+				{% endif %}
+			</li>
+		{% endfor %}
+		</ul>
+
 
 	{% for counts_on_date in counts %}
 		<div class="date">{{ counts_on_date.0.date }}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<ul>
+{% for user in users %}
+	<li><a href="{% url count.views.user_counts user.username %}">{{user}}</a></li>
+{% endfor %}
+</ul>
+
+{% endblock %}

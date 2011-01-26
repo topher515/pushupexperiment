@@ -7,6 +7,12 @@ body {
     background: #fff;
 }
 
+ul {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
 #header {
 	min-height: 35px;
 	background-color: #225;
@@ -29,12 +35,18 @@ body {
 	padding: 10px;
 }
 
+.skip {
+	text-align: center;
+	margin-: 5px;
+}
+
 #content {
 	position: relative;
+	margin-bottom: 25px;
 }
 
 #counts {
-	margin: 80px 150px 0px 150px;
+	margin: 40px 70px 40px 70px;
 }
 
 .date {
@@ -42,19 +54,44 @@ body {
 	width: 150px;
 	min-height: 150px;
 	float: left;
-	padding: 10px;
+	padding: 0px;
 	
 	position:relative;
 	background-color: #ddd;
+	overflow: hidden;
+}
+
+.date ul li {
+	padding: 5px;
+	margin: 0px;
+	font-size: 1.2em;
+}
+
+.date h3 {
+	padding: 2px;
+	text-align: center;
+	border-bottom: thin dashed black;
+}
+
+.date.first {
+	background-color: #ccd;
+	border: thin dashed black;
+}
+
+.bad {
+	background-color:#FDD;
 }
 
 .note {
 	font-style: italic;
 }
 
+.note:before { content: "\"";}
+.note:after { content: "\"";}
+
 
 #today {
-	margin: 80px 150px 0px 150px;
+	margin: 40px 70px 0px 70px;
 	border: thin dashed black;
 	background-color: #ccd;
 	padding: 10px;

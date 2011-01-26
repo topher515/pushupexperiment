@@ -89,6 +89,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
+
+
 ROOT_URLCONF = 'pushupexperiment.urls'
 
 TEMPLATE_DIRS = (
