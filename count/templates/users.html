@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<ul>
+<ul id="userlist">
 {% for user in users %}
 	<li><a href="{% url count.views.user_counts user.username %}">{{user}}</a></li>
 {% endfor %}
