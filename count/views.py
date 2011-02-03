@@ -31,8 +31,12 @@ def add(request):
 	
 
 def users(request):
+	users = User.objects.all()
+	if users.count() == 1:
+		return HttpResponseRedirect(reverse(user_counts,kwargs={'username':users[0].username}))
+	
 	return render_to_response('users.html',
-		{'users':User.objects.all()},
+		{'users':users},
 		RequestContext(request))
 
 
