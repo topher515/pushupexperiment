@@ -61,6 +61,7 @@ ul {
 	border: thin solid black;
 	width: 150px;
 	min-height: 150px;
+	max-height: 300px;
 	float: left;
 	padding: 0px;
 	
