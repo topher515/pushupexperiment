@@ -6,7 +6,7 @@
 				<h3>Today</h3>
 				<ul>
 			{% for w in workouts %}
-					<li class="count"><span class="note">Today {{user.username|title }} needs to do {{ w.for_today }} {{ w.name }}</span></li>
+					<li class="count"><span class="note">Today {{user.username|title }} needs to do {{ w.for_today }} {{ w.name }}. Or 4 sets of {% for x in w.for_today_sets_4 %}{{ x }} {% endfor %}</span></li>
 			{% endfor %}
 				</ul>
 			</li>
