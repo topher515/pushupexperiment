@@ -1,7 +1,17 @@
 <html>
 <head>
+	<title>The Pushup Experiment</title>
 	<meta name="viewport" content="user-scalable=no, width=device-width" />
-	{% block scripts %}{% endblock %}
+	{% block scripts %}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+	<script>
+	$(document).ready(function() {
+		$('.date').hover(function() { $(this).css('overflow','visible').css('z-index','100') },
+			function() { $(this).css('overflow','hidden').css('z-index','0') }
+		)
+	})
+	</script>
+	{% endblock %}
 	{% block css %}
 	<link rel="stylesheet" type="text/css" 
 	      href="{{MEDIA_URL}}css/base-iphone.css" media="only screen and (max-width: 480px)" />

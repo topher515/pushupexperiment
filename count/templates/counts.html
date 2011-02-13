@@ -11,7 +11,7 @@
 				</ul>
 			</li>
 		{% for counts_on_date in counts %}
-			<li class="date">
+			<li class="date{% if counts_on_date.0.date.isoweekday == 7 %} sunday{% endif %}">
 				<h3>{{ counts_on_date.0.date }}</h3>
 				{% if not counts_on_date.0.skip %}
 				<ul>
@@ -29,12 +29,14 @@
 							</form>
 						{% endif %}
 					</li>
+					
 				{% endfor %}
 				</ul>
 				{% else %}
 				<div class="skip">?</div>
 				{% endif %}
 			</li>
+			
 		{% endfor %}
 		</ul>
 

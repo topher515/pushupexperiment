@@ -45,7 +45,8 @@ ul {
 
 .skip {
 	text-align: center;
-	margin-: 5px;
+	margin: 5px;
+	position: absolute;
 }
 
 #content {
@@ -54,26 +55,30 @@ ul {
 }
 
 #counts {
-	margin: 40px 70px 40px 70px;
+	margin: 40px 25px 40px 25px;
 }
 
 .date {
 	border: thin solid black;
-	width: 150px;
-	min-height: 150px;
+	border-bottom:none;
+	width: 13.7%;
+	height: 150px;
+	/*min-height: 150px;
 	max-height: 300px;
-	float: left;
+	float: left;*/
 	padding: 0px;
-	
+	display: inline-block;
 	position:relative;
 	background-color: #ddd;
-	overflow: hidden;
 }
 
 .date ul li {
-	padding: 5px;
-	margin: 0px;
+	/*padding: 5px;*/
+	margin: auto;
 	font-size: 1.2em;
+	position: absolute;
+	width: 100%;
+	background-color: #dddddd;
 }
 
 .date h3 {
@@ -85,6 +90,14 @@ ul {
 .date.first {
 	background-color: #ccd;
 	border: thin dashed black;
+}
+
+.date.first li {
+	background-color: #ccd;
+}
+
+.date.sunday {
+	clear:right;
 }
 
 .bad {
